@@ -9,6 +9,18 @@
     )
     repeat-y scroll 16px center / 2px;
 }
+.spear-head-bg-line {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      rgb(214, 214, 214) 0px,
+      rgb(214, 214, 214) 20px,
+      rgb(214, 214, 214) 20px,
+      rgb(214, 214, 214) calc(100% - 20px),
+      rgb(255, 255, 255) calc(100% - 20px)
+    )
+    repeat-y scroll 16px center / 2px;
+}
+
 .ft-step-block {
   display: flex;
   gap: 0.5em;

@@ -21,7 +21,23 @@
       "name": "s3",
       "title": "Transform Data",
       "desc": "transform json data",
-      "icon": "bubble"
+      "icon": "bubble",
+      "steps": [
+        {
+          "id": "1231",
+          "name": "s1",
+          "title": "HTTP Request",
+          "desc": "get github repo detail",
+          "icon": "bubble"
+        },
+        {
+          "id": "1242",
+          "name": "s2",
+          "title": "Send Message",
+          "desc": "create new github repo",
+          "icon": "bubble"
+        }
+      ]
     },
     {
       "id": "126",
