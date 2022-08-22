@@ -2,8 +2,10 @@ import { useState } from 'react';
 import './App.css';
 import './Components.css';
 import AddStepButton from './components/AddStepButton';
+import FlowBlock from './components/FlowBlock';
 import FlowTree from './components/FlowTree';
-import StepBlock from './components/StepBlock';
+import StepBlockRender from './components/StepBlockRender';
+import VSpacer from './components/VSpacer';
 import flowData from './sample/flow.json';
 
 function App() {
@@ -11,20 +13,11 @@ function App() {
   return (
     <div className='App'>
       <FlowTree title={flow.title}>
-        {flow.steps.map((step, i, arr) => {
-          return (
-            <div key={step.id}>
-              <StepBlock title={step.title} desc={step.desc} />
-              {arr.length > i + 1 ? (
-                <AddStepButton hideByDefault={true} />
-              ) : (
-                <></>
-              )}
-            </div>
-          );
-        })}
-        <div style={{ height: '30px' }}></div>
-        <AddStepButton setFlow={setFlow} />
+        <FlowBlock>
+          <StepBlockRender flow={flow} hideAddButton={true} setFlow={setFlow} />
+          <VSpacer space={30} />
+          <AddStepButton setFlow={setFlow} position={'last'} />
+        </FlowBlock>
       </FlowTree>
     </div>
   );

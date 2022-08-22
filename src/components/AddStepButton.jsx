@@ -1,17 +1,26 @@
 import React from 'react';
 
-const AddStepButton = ({ hideByDefault, setFlow }) => {
+const AddStepButton = ({ hideByDefault, position, setFlow }) => {
   const addNewStep = () => {
     if (!setFlow) {
       return;
     }
     setFlow((flow) => {
+      let newSteps = [...flow.steps];
+      let item = {
+        title: 'Configure Step',
+        desc: '',
+        id: flow.steps.length
+      };
+
+      if (position === 'last') {
+        newSteps.push(item);
+      } else {
+        newSteps.splice(position + 1, 0, item);
+      }
       return {
         ...flow,
-        steps: [
-          ...flow.steps,
-          { title: 'New Step', desc: 'New Desc', id: flow.steps.length }
-        ]
+        steps: newSteps
       };
     });
   };
