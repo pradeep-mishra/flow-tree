@@ -1,0 +1,92 @@
+.ft-block {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      rgb(255, 255, 255) 0px,
+      rgb(214, 214, 214) 20px,
+      rgb(214, 214, 214) 20px,
+      rgb(214, 214, 214) calc(100% - 20px),
+      rgb(255, 255, 255) calc(100% - 20px)
+    )
+    repeat-y scroll 16px center / 2px;
+}
+.ft-step-block {
+  display: flex;
+  gap: 0.5em;
+  padding: 4px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+}
+.ft-step-block:hover {
+  background-color: rgba(204, 204, 204, 0.2);
+  cursor: pointer;
+}
+.ft-step-hide {
+  opacity: 0;
+}
+.ft-step-hide:hover {
+  opacity: 1;
+}
+.add-step-mid {
+  padding-left: 4px;
+  min-height: 36px;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+.add-step-btn {
+  border-radius: 3px;
+  width: 12px;
+  height: 12px;
+  margin-left: 7px;
+}
+
+.add-step-btn-ctn {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(223, 225, 230);
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+}
+
+.add-step-btn-ctn::before {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  content: '';
+  position: absolute;
+}
+.add-step-wrapper {
+  color: rgb(96, 96, 96);
+  background: transparent none repeat scroll 0% 0%;
+  display: flex;
+  position: relative;
+}
+.add-step-btn-text {
+  margin-top: -2px;
+  margin-left: 6px;
+  font-size: 0.76em;
+  font-weight: 500;
+}
+.ft-step-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #deebff;
+  color: #0747a6;
+  border-radius: 4px;
+  padding: 2px;
+  z-index: 1;
+  position: relative;
+}
+.ft-step-line {
+  border-left: 2px solid rgb(214, 214, 214);
+  height: 100%;
+  position: absolute;
+  margin-left: 44%;
+}
