@@ -1,5 +1,5 @@
 import create from 'zustand';
-import flow from '../sample/flow.json';
+import flow from '../sample/flow2.json';
 const useFlowStore = create((set) => ({
   title: flow.title,
   desc: flow.desc,

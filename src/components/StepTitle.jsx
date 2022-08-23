@@ -10,7 +10,7 @@ const StepTitle = ({ title, desc }) => {
           {desc ?? 'step description here'}
         </span>
       </div>
-      <div>
+      <div style={{ position: 'absolute', right: '8px' }}>
         <MdOutlineDelete className='ft-step-config-icon' />
       </div>
     </>

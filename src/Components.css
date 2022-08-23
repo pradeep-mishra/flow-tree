@@ -21,6 +21,30 @@
     repeat-y scroll 16px center / 2px;
 }
 
+.spear-head-bg-line-green {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      rgb(214, 214, 214) 0px,
+      rgb(202, 241, 200) 20px,
+      rgb(202, 241, 200) 20px,
+      rgb(202, 241, 200) calc(100% - 20px),
+      rgb(255, 255, 255) calc(100% - 20px)
+    )
+    repeat-y scroll 16px center / 2px;
+}
+
+.spear-head-bg-line-red {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      rgb(214, 214, 214) 0px,
+      rgb(242, 203, 214) 20px,
+      rgb(242, 203, 214) 20px,
+      rgb(242, 203, 214) calc(100% - 20px),
+      rgb(255, 255, 255) calc(100% - 20px)
+    )
+    repeat-y scroll 16px center / 2px;
+}
+
 .ft-step-block {
   display: flex;
   gap: 0.5em;
@@ -28,7 +52,7 @@
   padding-right: 10px;
   padding-bottom: 6px;
   border-radius: 6px;
-  justify-content: space-between;
+  position: relative;
 }
 .ft-step-block:hover {
   background-color: rgba(204, 204, 204, 0.2);

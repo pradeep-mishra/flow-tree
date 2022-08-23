@@ -3,7 +3,7 @@ import './Components.css';
 import AddStepButton from './components/AddStepButton';
 import FlowBlock from './components/FlowBlock';
 import FlowTree from './components/FlowTree';
-import StepBlockRender from './components/StepBlockRender';
+import RenderBlocks from './components/RenderBlocks';
 import VSpacer from './components/VSpacer';
 import { useFlowStore } from './store/flow';
 
@@ -31,7 +31,7 @@ function App() {
     <div className='App'>
       <FlowTree title={title}>
         <FlowBlock>
-          <StepBlockRender steps={steps} setSteps={addStep} />
+          <RenderBlocks steps={steps} setSteps={addStep} />
           <VSpacer space={30} />
           <AddStepButton setSteps={addStep} />
         </FlowBlock>
