@@ -19,25 +19,12 @@
     {
       "id": "125",
       "name": "s3",
-      "title": "Transform Data",
-      "desc": "transform json data",
+      "behaviour": "ifelse",
+      "title": "If Else",
+      "desc": "Apply if and else",
       "icon": "bubble",
-      "steps": [
-        {
-          "id": "1231",
-          "name": "s1",
-          "title": "HTTP Request",
-          "desc": "get github repo detail",
-          "icon": "bubble"
-        },
-        {
-          "id": "1242",
-          "name": "s2",
-          "title": "Send Message",
-          "desc": "create new github repo",
-          "icon": "bubble"
-        }
-      ]
+      "if": [],
+      "else": []
     },
     {
       "id": "126",
@@ -45,6 +32,16 @@
       "title": "Send Notification",
       "desc": "send email notification",
       "icon": "bubble"
+    },
+    {
+      "id": "1257",
+      "name": "s7",
+      "behaviour": "ifelse",
+      "title": "If Else",
+      "desc": "Apply if and else",
+      "icon": "bubble",
+      "if": [],
+      "else": []
     }
   ]
 }

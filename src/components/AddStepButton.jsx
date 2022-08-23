@@ -1,8 +1,8 @@
 import React from 'react';
 
-const AddStepButton = ({ hideByDefault, position, setFlow }) => {
+const AddStepButton = ({ hideByDefault, position, setSteps, title }) => {
   const addNewStep = () => {
-    setFlow(position);
+    setSteps(position);
   };
   return (
     <div
@@ -14,7 +14,7 @@ const AddStepButton = ({ hideByDefault, position, setFlow }) => {
             <div className='add-step-btn-ctn'></div>
           </div>
         </div>
-        <div className='add-step-btn-text'>Add Step</div>
+        <div className='add-step-btn-text'>{title ?? 'Add Step'}</div>
       </div>
     </div>
   );

@@ -2,9 +2,9 @@
   background: rgba(0, 0, 0, 0)
     linear-gradient(
       rgb(255, 255, 255) 0px,
-      rgb(214, 214, 214) 20px,
-      rgb(214, 214, 214) 20px,
-      rgb(214, 214, 214) calc(100% - 20px),
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) calc(100% - 20px),
       rgb(255, 255, 255) calc(100% - 20px)
     )
     repeat-y scroll 16px center / 2px;
@@ -13,9 +13,9 @@
   background: rgba(0, 0, 0, 0)
     linear-gradient(
       rgb(214, 214, 214) 0px,
-      rgb(214, 214, 214) 20px,
-      rgb(214, 214, 214) 20px,
-      rgb(214, 214, 214) calc(100% - 20px),
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) calc(100% - 20px),
       rgb(255, 255, 255) calc(100% - 20px)
     )
     repeat-y scroll 16px center / 2px;
@@ -28,6 +28,7 @@
   padding-right: 10px;
   padding-bottom: 6px;
   border-radius: 6px;
+  justify-content: space-between;
 }
 .ft-step-block:hover {
   background-color: rgba(204, 204, 204, 0.2);
@@ -39,6 +40,15 @@
 .ft-step-hide:hover {
   opacity: 1;
 }
+
+.ft-step-config-icon {
+  opacity: 0;
+  padding-top: 2px;
+}
+.ft-step-block:hover .ft-step-config-icon {
+  opacity: 1;
+}
+
 .add-step-mid {
   padding-left: 4px;
   min-height: 36px;
