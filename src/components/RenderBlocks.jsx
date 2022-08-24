@@ -6,7 +6,7 @@ import VSpacer from './VSpacer';
 
 const RenderBlocks = ({ steps, setSteps, currentPosition, showAddButton }) => {
   const loadBlockSwitch = (step, currentPosition) => {
-    switch (step.behaviour) {
+    switch (step.as) {
       case 'ifelse':
         return (
           <>

@@ -1,0 +1,41 @@
+{
+  "title": "My Flow",
+  "desc": "",
+  "steps": [
+    {
+      "id": "123",
+      "name": "s1",
+      "title": "Get Repo Detail",
+      "desc": "get github repo detail",
+      "icon": "bubble"
+    },
+    {
+      "id": "124",
+      "name": "s2",
+      "title": "Create New Repo",
+      "desc": "create new github repo",
+      "icon": "bubble"
+    },
+    {
+      "id": "125",
+      "name": "s3",
+      "title": "Send Notification",
+      "desc": "send email notification",
+      "icon": "bubble"
+    },
+    {
+      "id": "126",
+      "name": "s4",
+      "title": "Save Metadata",
+      "desc": "save metadata info in db",
+      "icon": "bubble"
+    },
+    {
+      "id": "1257",
+      "name": "s7",
+      "title": "Increase Counter",
+      "desc": "increase execution counter",
+      "icon": "bubble"
+    }
+  ]
+}

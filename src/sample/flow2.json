@@ -19,7 +19,7 @@
     {
       "id": "125",
       "name": "s3",
-      "behaviour": "ifelse",
+      "as": "ifelse",
       "title": "If Else",
       "desc": "Apply if and else",
       "icon": "bubble",
@@ -50,7 +50,7 @@
         {
           "id": "125",
           "name": "s3",
-          "behaviour": "ifelse",
+          "as": "ifelse",
           "title": "If Else",
           "desc": "Apply if and else",
           "icon": "bubble",

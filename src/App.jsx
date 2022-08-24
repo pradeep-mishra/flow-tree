@@ -16,8 +16,8 @@ function App() {
     const newItem = {
       name: 's' + Math.random() * Date.now(),
       id: 's' + Math.random() * Date.now(),
-      title: 'Here is New Step Added',
-      desc: 'description put here'
+      title: 'Configure Step',
+      desc: 'description here'
     };
     if (isNaN(position)) {
       return setSteps([...steps, newItem]);

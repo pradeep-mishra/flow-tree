@@ -5,9 +5,9 @@ const StepTitle = ({ title, desc }) => {
   return (
     <>
       <div>
-        <h5 style={{ margin: '0px' }}>{title ?? 'Step Title'}</h5>
+        <h5 style={{ margin: '0px' }}>{title ?? 'Title Here'}</h5>
         <span style={{ fontSize: '0.8em', color: 'rgb(122,122,122)' }}>
-          {desc ?? 'step description here'}
+          {desc ?? 'description here'}
         </span>
       </div>
       <div style={{ position: 'absolute', right: '8px' }}>
