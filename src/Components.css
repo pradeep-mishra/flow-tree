@@ -81,10 +81,11 @@
   cursor: pointer;
 }
 .add-step-btn {
-  border-radius: 3px;
-  width: 12px;
-  height: 12px;
-  margin-left: 7px;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  margin-top: 9px;
+  color: #9f9f9f;
 }
 
 .add-step-btn-ctn {
@@ -96,18 +97,6 @@
   z-index: 3;
 }
 
-.add-step-btn-ctn::before {
-  border-radius: 50%;
-  background-color: rgb(255, 255, 255);
-  width: 10px;
-  height: 10px;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  content: '';
-  position: absolute;
-}
 .add-step-wrapper {
   color: rgb(96, 96, 96);
   background: transparent none repeat scroll 0% 0%;
@@ -115,7 +104,7 @@
   position: relative;
 }
 .add-step-btn-text {
-  margin-top: -2px;
+  margin-top: 9px;
   margin-left: 6px;
   font-size: 0.76em;
   font-weight: 500;

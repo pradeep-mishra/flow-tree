@@ -40,8 +40,25 @@
       "title": "If Else",
       "desc": "Apply if and else",
       "icon": "bubble",
-      "if": [],
-      "else": []
+      "if": [
+        {
+          "id": "1231",
+          "title": "Get User",
+          "desc": "get user by id"
+        },
+        {
+          "id": "1241",
+          "title": "Fetch Tweets",
+          "desc": "fetch tweets by hashtag"
+        }
+      ],
+      "else": [
+        {
+          "id": "1232",
+          "title": "Create Post",
+          "desc": "create Linkedin post"
+        }
+      ]
     }
   ]
 }

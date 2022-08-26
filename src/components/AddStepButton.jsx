@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdAddCircleOutline } from 'react-icons/md';
 
 const AddStepButton = ({ hideByDefault, position, setSteps, title }) => {
   const addNewStep = () => {
@@ -11,7 +12,7 @@ const AddStepButton = ({ hideByDefault, position, setSteps, title }) => {
       <div className='add-step-wrapper'>
         <div>
           <div className='add-step-btn'>
-            <div className='add-step-btn-ctn'></div>
+            <MdAddCircleOutline />
           </div>
         </div>
         <div className='add-step-btn-text'>{title ?? 'Add Step'}</div>
