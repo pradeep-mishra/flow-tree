@@ -1,6 +1,6 @@
 # flow-tree
 
-#### React flow tree component
+#### React flow tree component (work in progress)
 
 React component, to show data in tree view similar to git branches
 Useful for iPaaS application UI
