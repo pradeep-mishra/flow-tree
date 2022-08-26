@@ -49,10 +49,8 @@ Example json file
     },
     {
       "id": "126",
-      "name": "s4",
       "title": "Send Notification",
-      "desc": "send email notification",
-      "icon": "bubble"
+      "desc": "send email notification"
     }
   ]
 }
