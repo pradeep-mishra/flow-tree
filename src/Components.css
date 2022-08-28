@@ -24,7 +24,7 @@
 .spear-head-bg-line-green {
   background: rgba(0, 0, 0, 0)
     linear-gradient(
-      rgb(214, 214, 214) 0px,
+      rgb(235, 236, 240) 0px,
       rgb(202, 241, 200) 20px,
       rgb(202, 241, 200) 20px,
       rgb(202, 241, 200) calc(100% - 20px),
@@ -36,7 +36,7 @@
 .spear-head-bg-line-red {
   background: rgba(0, 0, 0, 0)
     linear-gradient(
-      rgb(214, 214, 214) 0px,
+      rgb(235, 236, 240) 0px,
       rgb(242, 203, 214) 20px,
       rgb(242, 203, 214) 20px,
       rgb(242, 203, 214) calc(100% - 20px),
@@ -46,7 +46,9 @@
 }
 
 .ft-step-block-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: start;
   gap: 0.5em;
   padding: 4px;
   padding-right: 10px;
@@ -80,7 +82,7 @@
 
 .add-step-mid {
   padding-left: 4px;
-  min-height: 36px;
+  min-height: 30px;
   align-items: center;
   display: flex;
   cursor: pointer;

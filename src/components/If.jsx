@@ -6,7 +6,7 @@ const hLineStyle = {
   position: 'absolute',
   top: '0px',
   left: '16px',
-  borderTop: '2px solid #EBECF0'
+  borderTop: '2px solid rgb(235, 236, 240)'
 };
 
 const IfBlock = ({ children }) => {

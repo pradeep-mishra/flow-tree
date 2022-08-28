@@ -4,10 +4,21 @@ import If from './If';
 import StepBlock from './StepBlock';
 import VSpacer from './VSpacer';
 
+const getLastAddButton = (onNewStep, path) => {
+  return (
+    !path && (
+      <>
+        <VSpacer space={30} />
+        <AddStepButton path='' onNewStep={onNewStep} />
+      </>
+    )
+  );
+};
+
 const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
   path = path || '';
   const loadBlockSwitch = React.useCallback(
-    (step, currentPosition, currentPath, currParent) => {
+    (step, currentPosition, currentPath) => {
       switch (step.as) {
         case 'ifelse':
           return (
@@ -84,6 +95,7 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
           <div key={index}>{loadBlockSwitch(step, index, currPath, path)}</div>
         );
       })}
+      {getLastAddButton(onNewStep, path)}
     </>
   );
 };
