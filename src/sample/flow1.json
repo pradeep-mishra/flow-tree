@@ -50,7 +50,7 @@
         {
           "id": "1241",
           "title": "Fetch Tweets",
-          "desc": "fetch tweets by hashtag"
+          "desc": "fetch user tweets from twitter by specific hashtag sorted by date"
         }
       ],
       "else": [
