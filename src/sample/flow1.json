@@ -37,8 +37,9 @@
       "id": "1257",
       "name": "s7",
       "as": "ifelse",
+      "expr": [[{ "input": "", "condition": "exactly matches", "value": "" }]],
       "title": "If Else",
-      "desc": "Apply if and else",
+      "desc": "if and else condition",
       "icon": "bubble",
       "if": [
         {
