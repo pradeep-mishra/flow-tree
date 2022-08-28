@@ -45,7 +45,7 @@
     repeat-y scroll 16px center / 2px;
 }
 
-.ft-step-block {
+.ft-step-block-head {
   display: flex;
   gap: 0.5em;
   padding: 4px;
@@ -54,9 +54,14 @@
   border-radius: 6px;
   position: relative;
 }
-.ft-step-block:hover {
+.ft-step-block-head:hover {
   background-color: rgba(204, 204, 204, 0.2);
   cursor: pointer;
+}
+
+.ft-step-block-body {
+  padding-left: 50px;
+  position: relative;
 }
 .ft-step-hide {
   opacity: 0;
@@ -69,7 +74,7 @@
   opacity: 0;
   padding-top: 2px;
 }
-.ft-step-block:hover .ft-step-config-icon {
+.ft-step-block-head:hover .ft-step-config-icon {
   opacity: 1;
 }
 
@@ -106,6 +111,7 @@
 .add-step-btn-text {
   margin-top: 9px;
   margin-left: 6px;
+  margin-bottom: 6px;
   font-size: 0.76em;
   font-weight: 500;
 }

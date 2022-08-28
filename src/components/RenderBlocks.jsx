@@ -4,67 +4,85 @@ import If from './If';
 import StepBlock from './StepBlock';
 import VSpacer from './VSpacer';
 
-const RenderBlocks = ({ steps, setSteps, currentPosition, showAddButton }) => {
-  const loadBlockSwitch = (step, currentPosition) => {
-    switch (step.as) {
-      case 'ifelse':
-        return (
-          <>
-            <StepBlock title={step.title} desc={step.desc} />
-            <If>
-              <If.If>
-                <RenderBlocks
-                  hideAddButton={true}
-                  steps={step.if}
-                  position={currentPosition}
-                  setSteps={setSteps}
-                />
-                <VSpacer space={30} />
+const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
+  path = path || '';
+  const loadBlockSwitch = React.useCallback(
+    (step, currentPosition, currentPath, currParent) => {
+      switch (step.as) {
+        case 'ifelse':
+          return (
+            <>
+              <StepBlock title={step.title} desc={step.desc} />
+              <If className='ft-step-block-body'>
+                <If.If>
+                  <RenderBlocks
+                    steps={step.if}
+                    path={`${currentPath}.if`}
+                    onNewStep={onNewStep}
+                  />
+                  <VSpacer space={30} />
+                  <AddStepButton
+                    title='Add If Step here'
+                    path={`${currentPath}.if`}
+                    onNewStep={onNewStep}
+                  />
+                </If.If>
+                <If.Else>
+                  <RenderBlocks
+                    steps={step.else}
+                    path={`${currentPath}.else`}
+                    onNewStep={onNewStep}
+                  />
+                  <VSpacer space={30} />
+                  <AddStepButton
+                    title='Add Else Step here'
+                    path={`${currentPath}.else`}
+                    onNewStep={onNewStep}
+                  />
+                </If.Else>
+              </If>
+              <div className='ft-step-block-foot'>
+                {steps.length > currentPosition + 1 ? (
+                  <AddStepButton
+                    hideByDefault={!showMiddleAddButton}
+                    position={currentPosition}
+                    path={path}
+                    onNewStep={onNewStep}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+            </>
+          );
+        default:
+          return (
+            <>
+              <StepBlock title={step.title} desc={step.desc} />
+              {steps.length > currentPosition + 1 ? (
                 <AddStepButton
-                  title='Add If Step here'
+                  hideByDefault={!showMiddleAddButton}
                   position={currentPosition}
-                  setSteps={setSteps}
+                  path={path}
+                  onNewStep={onNewStep}
+                  className='ft-step-block-foot'
                 />
-              </If.If>
-              <If.Else>
-                <RenderBlocks
-                  hideAddButton={true}
-                  steps={step.else}
-                  position={currentPosition}
-                  setSteps={setSteps}
-                />
-                <VSpacer space={30} />
-                <AddStepButton
-                  title='Add Else Step here'
-                  position={currentPosition}
-                  setSteps={setSteps}
-                />
-              </If.Else>
-            </If>
-          </>
-        );
-      default:
-        return (
-          <>
-            <StepBlock title={step.title} desc={step.desc} />
-            {steps.length > currentPosition + 1 ? (
-              <AddStepButton
-                hideByDefault={!showAddButton}
-                position={currentPosition}
-                setSteps={setSteps}
-              />
-            ) : (
-              <></>
-            )}
-          </>
-        );
+              ) : (
+                <></>
+              )}
+            </>
+          );
+      }
     }
-  };
+  );
 
   return (
     <>
       {steps.map((step, index) => {
-        return <div key={step.id}>{loadBlockSwitch(step, index)}</div>;
+        const currPath = `${path}[${index}]`;
+        return (
+          <div key={index}>{loadBlockSwitch(step, index, currPath, path)}</div>
+        );
       })}
     </>
   );

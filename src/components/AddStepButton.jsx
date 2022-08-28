@@ -1,14 +1,21 @@
 import React from 'react';
 import { MdAddCircleOutline } from 'react-icons/md';
 
-const AddStepButton = ({ hideByDefault, position, setSteps, title }) => {
-  const addNewStep = () => {
-    setSteps(position);
-  };
+const AddStepButton = ({
+  hideByDefault,
+  title,
+  path,
+  position,
+  onNewStep,
+  className
+}) => {
+  const addNewStep = () => onNewStep(path, position);
   return (
     <div
       onClick={addNewStep}
-      className={`add-step-mid ${hideByDefault ? 'ft-step-hide' : ''}`}>
+      className={`add-step-mid ${hideByDefault ? 'ft-step-hide' : ''} ${
+        className ?? ''
+      }`}>
       <div className='add-step-wrapper'>
         <div>
           <div className='add-step-btn'>

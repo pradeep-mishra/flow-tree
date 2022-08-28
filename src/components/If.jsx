@@ -17,11 +17,11 @@ const ElseBlock = ({ children }) => {
   return null;
 };
 
-const If = ({ children }) => {
+const If = ({ children, className }) => {
   const ifBlock = children.find((el) => el.type === IfBlock);
   const elseBlock = children.find((el) => el.type === ElseBlock);
   return (
-    <div style={{ paddingLeft: '50px', position: 'relative' }}>
+    <div className={className}>
       <div style={hLineStyle}></div>
       <FlowBlock className='spear-head-bg-line-green'>
         <div style={{ paddingLeft: '50px' }}>
