@@ -14,10 +14,10 @@ const If = ({ children, className }) => {
   const elseBlock = children.find((el) => el.type === ElseBlock);
   return (
     <div className={`ft-step-block-body ${className ?? ''}`}>
-      <div className='spear-hline'></div>
-      <FlowBlock className='spear-head-bg-line-green'>
+      <div className='ft-spear-hline'></div>
+      <FlowBlock className='ft-spear-head-bg-line-green'>
         <div style={{ paddingLeft: '50px' }}>
-          <FlowBlock className='spear-head-bg-line-red'>
+          <FlowBlock className='ft-spear-head-bg-line-red'>
             <div className='ft-else-block'>
               {elseBlock ? elseBlock.props.children : null}
             </div>

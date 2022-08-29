@@ -13,16 +13,16 @@ const AddStepButton = ({
   return (
     <div
       onClick={addNewStep}
-      className={`add-step-mid ${hideByDefault ? 'ft-step-hide' : ''} ${
+      className={`ft-add-step-mid ${hideByDefault ? 'ft-step-hide' : ''} ${
         className ?? ''
       }`}>
-      <div className='add-step-wrapper'>
+      <div className='ft-add-step-wrapper'>
         <div>
-          <div className='add-step-btn'>
+          <div className='ft-add-step-btn'>
             <MdAddCircleOutline />
           </div>
         </div>
-        <div className='add-step-btn-text'>{title ?? 'Add Step'}</div>
+        <div className='ft-add-step-btn-text'>{title ?? 'Add Step'}</div>
       </div>
     </div>
   );
