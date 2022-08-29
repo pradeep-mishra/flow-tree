@@ -4,10 +4,12 @@ import './Components.css';
 import FlowBlock from './components/FlowBlock';
 import FlowTree from './components/FlowTree';
 import RenderBlocks from './components/RenderBlocks';
+import flow from './sample/flow1.json';
 import { useFlowStore } from './store/flow';
 
 function App() {
   const setSteps = useFlowStore((state) => state.setSteps);
+  const setTitle = useFlowStore((state) => state.setTitle);
   const title = useFlowStore((state) => state.title);
   const steps = useFlowStore((state) => state.steps);
 
@@ -43,18 +45,21 @@ function App() {
     }
   };
 
+  React.useEffect(() => {
+    setTitle(flow.title);
+    setSteps(flow.steps);
+  }, []);
+
   return (
-    <>
-      <FlowTree title={title}>
-        <FlowBlock>
-          <RenderBlocks
-            steps={steps}
-            onNewStep={addNewStep}
-            onDeleteStep={deleteStep}
-          />
-        </FlowBlock>
-      </FlowTree>
-    </>
+    <FlowTree title={title}>
+      <FlowBlock>
+        <RenderBlocks
+          steps={steps}
+          onNewStep={addNewStep}
+          onDeleteStep={deleteStep}
+        />
+      </FlowBlock>
+    </FlowTree>
   );
 }
 

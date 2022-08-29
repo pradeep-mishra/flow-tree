@@ -1,9 +1,9 @@
 import create from 'zustand';
-import flow from '../sample/flow1.json';
+//import flow from '../sample/flow1.json';
 const useFlowStore = create((set) => ({
-  title: flow.title,
-  desc: flow.desc,
-  steps: flow.steps,
+  title: 'My Flow',
+  desc: '',
+  steps: [],
   setTitle: (title) => {
     set((state) => ({ title: title }));
   },
