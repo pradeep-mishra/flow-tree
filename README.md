@@ -5,6 +5,10 @@
 React component, to show data in tree view similar to git branches
 Useful for iPaaS application UI
 
+#### Demo site
+
+[https://flowtree.netlify.app](https://flowtree.netlify.app)
+
 Example json file
 
 ```json
