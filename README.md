@@ -28,9 +28,32 @@ Example json file
     },
     {
       "id": "125",
+      "as": "loop",
+      "input": {
+        "by": "times|items",
+        "value": ""
+      },
+      "title": "Repeat",
+      "desc": "repeat specific steps",
+      "steps": [
+        {
+          "id": "126",
+          "title": "Send Notification",
+          "desc": "send email notification"
+        }
+      ]
+    },
+    {
+      "id": "2126",
+      "title": "Get Score",
+      "desc": "get score from db"
+    },
+    {
+      "id": "1257",
       "as": "ifelse",
+      "input": [[{ "input": "", "condition": "exactly matches", "value": "" }]],
       "title": "If Else",
-      "desc": "Apply if and else",
+      "desc": "if and else condition",
       "if": [
         {
           "id": "1231",
@@ -40,7 +63,7 @@ Example json file
         {
           "id": "1241",
           "title": "Fetch Tweets",
-          "desc": "fetch tweets by hashtag"
+          "desc": "fetch user tweets from twitter by specific hashtag sorted by date"
         }
       ],
       "else": [
@@ -50,11 +73,6 @@ Example json file
           "desc": "create Linkedin post"
         }
       ]
-    },
-    {
-      "id": "126",
-      "title": "Send Notification",
-      "desc": "send email notification"
     }
   ]
 }
