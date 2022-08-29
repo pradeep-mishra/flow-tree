@@ -31,13 +31,13 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <>
       <FlowTree title={title}>
         <FlowBlock>
           <RenderBlocks steps={steps} onNewStep={addNewStep} />
         </FlowBlock>
       </FlowTree>
-    </div>
+    </>
   );
 }
 
