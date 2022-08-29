@@ -10,7 +10,7 @@ const StepTitle = ({ title, desc }) => {
         style={{
           fontSize: '0.7em',
           color: 'rgb(122,122,122)',
-          maxWidth: '24em',
+          maxWidth: '16em',
           display: 'block',
           lineHeight: '1.2em'
         }}>

@@ -84,6 +84,8 @@
   padding-bottom: 6px;
   border-radius: 6px;
   position: relative;
+  /* remove this when shadow is activated for if and repeat */
+  max-width: 16em;
 }
 .ft-step-block-head:hover {
   background-color: rgba(204, 204, 204, 0.2);
