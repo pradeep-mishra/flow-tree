@@ -1,6 +1,7 @@
 import React from 'react';
 import AddStepButton from './AddStepButton';
 import If from './If';
+import Loop from './Loop';
 import StepBlock from './StepBlock';
 import VSpacer from './VSpacer';
 
@@ -8,7 +9,7 @@ const getLastAddButton = (onNewStep, path) => {
   return (
     !path && (
       <>
-        <VSpacer space={30} />
+        <VSpacer space={20} />
         <AddStepButton path='' onNewStep={onNewStep} />
       </>
     )
@@ -24,14 +25,14 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
           return (
             <>
               <StepBlock title={step.title} desc={step.desc} />
-              <If className='ft-step-block-body'>
+              <If>
                 <If.If>
                   <RenderBlocks
                     steps={step.if}
                     path={`${currentPath}.if`}
                     onNewStep={onNewStep}
                   />
-                  <VSpacer space={30} />
+                  <VSpacer space={20} />
                   <AddStepButton
                     title='Add If Step here'
                     path={`${currentPath}.if`}
@@ -44,7 +45,7 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
                     path={`${currentPath}.else`}
                     onNewStep={onNewStep}
                   />
-                  <VSpacer space={30} />
+                  <VSpacer space={20} />
                   <AddStepButton
                     title='Add Else Step here'
                     path={`${currentPath}.else`}
@@ -64,6 +65,25 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
                   <></>
                 )}
               </div>
+            </>
+          );
+        case 'loop':
+          return (
+            <>
+              <StepBlock title={step.title} desc={step.desc} />
+              <Loop>
+                <RenderBlocks
+                  steps={step.steps}
+                  path={`${currentPath}.steps`}
+                  onNewStep={onNewStep}
+                />
+                <VSpacer space={20} />
+                <AddStepButton
+                  title='Add Step here'
+                  path={`${currentPath}.steps`}
+                  onNewStep={onNewStep}
+                />
+              </Loop>
             </>
           );
         default:

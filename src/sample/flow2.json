@@ -42,41 +42,31 @@
       "else": [
         {
           "id": "123",
-          "name": "s1",
           "title": "Get Repo Detail",
-          "desc": "get github repo detail",
-          "icon": "bubble"
+          "desc": "get github repo detail"
         },
         {
           "id": "125",
-          "name": "s3",
           "as": "ifelse",
           "title": "If Else",
           "desc": "Apply if and else",
-          "icon": "bubble",
           "if": [
             {
               "id": "123",
-              "name": "s1",
               "title": "Get Repo Detail",
-              "desc": "get github repo detail",
-              "icon": "bubble"
+              "desc": "get github repo detail"
             },
             {
               "id": "124",
-              "name": "s2",
               "title": "Create New Repo",
-              "desc": "create new github repo",
-              "icon": "bubble"
+              "desc": "create new github repo"
             }
           ],
           "else": [
             {
               "id": "123",
-              "name": "s1",
               "title": "Get Repo Detail",
-              "desc": "get github repo detail",
-              "icon": "bubble"
+              "desc": "get github repo detail"
             }
           ]
         }
@@ -84,10 +74,8 @@
     },
     {
       "id": "126",
-      "name": "s4",
       "title": "Send Notification",
-      "desc": "send email notification",
-      "icon": "bubble"
+      "desc": "send email notification"
     }
   ]
 }

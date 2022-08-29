@@ -9,10 +9,39 @@
     )
     repeat-y scroll 16px center / 2px;
 }
+
+.spear-hline-half {
+  width: 52px;
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  border-top: 2px solid rgb(235, 236, 240);
+}
+
+.spear-hline {
+  width: 102px;
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  border-top: 2px solid rgb(235, 236, 240);
+}
+
 .spear-head-bg-line {
   background: rgba(0, 0, 0, 0)
     linear-gradient(
       rgb(214, 214, 214) 0px,
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) 20px,
+      rgb(235, 236, 240) calc(100% - 20px),
+      rgb(255, 255, 255) calc(100% - 20px)
+    )
+    repeat-y scroll 16px center / 2px;
+}
+
+.spear-head-bg-line-gray {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      rgb(235, 236, 240) 0px,
       rgb(235, 236, 240) 20px,
       rgb(235, 236, 240) 20px,
       rgb(235, 236, 240) calc(100% - 20px),
