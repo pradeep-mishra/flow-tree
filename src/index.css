@@ -23,7 +23,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /*display: flex;*/
   place-items: center;
   min-width: 320px;
   padding: 10px;
@@ -52,4 +52,19 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.footer-right {
+  color: rgb(61, 61, 61);
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  text-align: right;
+}
+.footer-creator {
+  bottom: 7px;
+  position: relative;
+}
+.vspacer {
+  margin: 32px;
 }
