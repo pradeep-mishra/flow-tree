@@ -15,8 +15,12 @@
     {
       "id": "125",
       "as": "loop",
+      "input": {
+        "by": "times|items",
+        "value": ""
+      },
       "title": "Repeat",
-      "desc": "repeat specific tasks",
+      "desc": "repeat specific steps",
       "steps": [
         {
           "id": "126",
@@ -33,7 +37,7 @@
     {
       "id": "1257",
       "as": "ifelse",
-      "expr": [[{ "input": "", "condition": "exactly matches", "value": "" }]],
+      "input": [[{ "input": "", "condition": "exactly matches", "value": "" }]],
       "title": "If Else",
       "desc": "if and else condition",
       "if": [
