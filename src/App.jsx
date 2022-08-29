@@ -20,7 +20,7 @@ function App() {
     let newSteps = [...steps];
     let frag = path ? get(steps, path) : newSteps;
     if (!frag) {
-      return console.log('store fragment not found to', path, position);
+      return console.log('store fragment not found on', path, position);
     }
     if (!isNaN(position)) {
       frag.splice(position + 1, 0, newItem);
@@ -30,11 +30,28 @@ function App() {
     setSteps(newSteps);
   };
 
+  const deleteStep = (path, position) => {
+    let newPath = path.replace(/\[\d+\]$/gm, '').trim();
+    let newSteps = [...steps];
+    let frag = newPath ? get(steps, newPath) : newSteps;
+    if (!frag) {
+      return console.log('store fragment not found on', path, position);
+    }
+    if (!isNaN(position)) {
+      frag.splice(position, 1);
+      return setSteps(newSteps);
+    }
+  };
+
   return (
     <>
       <FlowTree title={title}>
         <FlowBlock>
-          <RenderBlocks steps={steps} onNewStep={addNewStep} />
+          <RenderBlocks
+            steps={steps}
+            onNewStep={addNewStep}
+            onDeleteStep={deleteStep}
+          />
         </FlowBlock>
       </FlowTree>
     </>

@@ -16,7 +16,13 @@ const getLastAddButton = (onNewStep, path) => {
   );
 };
 
-const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
+const RenderBlocks = ({
+  steps,
+  path,
+  onNewStep,
+  onDeleteStep,
+  showMiddleAddButton
+}) => {
   path = path || '';
   const loadBlockSwitch = React.useCallback(
     (step, currentPosition, currentPath) => {
@@ -24,13 +30,20 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
         case 'ifelse':
           return (
             <>
-              <StepBlock title={step.title} desc={step.desc} />
+              <StepBlock
+                title={step.title}
+                desc={step.desc}
+                onDeleteStep={onDeleteStep}
+                currPath={currentPath}
+                currPosition={currentPosition}
+              />
               <If>
                 <If.If>
                   <RenderBlocks
                     steps={step.if}
                     path={`${currentPath}.if`}
                     onNewStep={onNewStep}
+                    onDeleteStep={onDeleteStep}
                   />
                   <VSpacer space={20} />
                   <AddStepButton
@@ -44,6 +57,7 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
                     steps={step.else}
                     path={`${currentPath}.else`}
                     onNewStep={onNewStep}
+                    onDeleteStep={onDeleteStep}
                   />
                   <VSpacer space={20} />
                   <AddStepButton
@@ -70,12 +84,19 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
         case 'loop':
           return (
             <>
-              <StepBlock title={step.title} desc={step.desc} />
+              <StepBlock
+                title={step.title}
+                desc={step.desc}
+                onDeleteStep={onDeleteStep}
+                currPath={currentPath}
+                currPosition={currentPosition}
+              />
               <Loop>
                 <RenderBlocks
                   steps={step.steps}
                   path={`${currentPath}.steps`}
                   onNewStep={onNewStep}
+                  onDeleteStep={onDeleteStep}
                 />
                 <VSpacer space={20} />
                 <AddStepButton
@@ -89,7 +110,13 @@ const RenderBlocks = ({ steps, path, onNewStep, showMiddleAddButton }) => {
         default:
           return (
             <>
-              <StepBlock title={step.title} desc={step.desc} />
+              <StepBlock
+                title={step.title}
+                desc={step.desc}
+                onDeleteStep={onDeleteStep}
+                currPath={currentPath}
+                currPosition={currentPosition}
+              />
               {steps.length > currentPosition + 1 ? (
                 <AddStepButton
                   hideByDefault={!showMiddleAddButton}
