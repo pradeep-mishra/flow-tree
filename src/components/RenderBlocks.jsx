@@ -16,6 +16,29 @@ const getLastAddButton = (onNewStep, path) => {
   );
 };
 
+const getAddButtonAfterStep = (
+  steps,
+  currentPosition,
+  path,
+  onNewStep,
+  showMiddleAddButton
+) => {
+  return (
+    <div className='ft-step-block-foot'>
+      {steps.length > currentPosition + 1 ? (
+        <AddStepButton
+          hideByDefault={!showMiddleAddButton}
+          position={currentPosition}
+          path={path}
+          onNewStep={onNewStep}
+        />
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
 const RenderBlocks = ({
   steps,
   path,
@@ -67,18 +90,13 @@ const RenderBlocks = ({
                   />
                 </If.Else>
               </If>
-              <div className='ft-step-block-foot'>
-                {steps.length > currentPosition + 1 ? (
-                  <AddStepButton
-                    hideByDefault={!showMiddleAddButton}
-                    position={currentPosition}
-                    path={path}
-                    onNewStep={onNewStep}
-                  />
-                ) : (
-                  <></>
-                )}
-              </div>
+              {getAddButtonAfterStep(
+                steps,
+                currentPosition,
+                path,
+                onNewStep,
+                showMiddleAddButton
+              )}
             </>
           );
         case 'loop':
@@ -105,18 +123,13 @@ const RenderBlocks = ({
                   onNewStep={onNewStep}
                 />
               </Loop>
-              <div className='ft-step-block-foot'>
-                {steps.length > currentPosition + 1 ? (
-                  <AddStepButton
-                    hideByDefault={!showMiddleAddButton}
-                    position={currentPosition}
-                    path={path}
-                    onNewStep={onNewStep}
-                  />
-                ) : (
-                  <></>
-                )}
-              </div>
+              {getAddButtonAfterStep(
+                steps,
+                currentPosition,
+                path,
+                onNewStep,
+                showMiddleAddButton
+              )}
             </>
           );
         default:
@@ -129,16 +142,12 @@ const RenderBlocks = ({
                 currPath={currentPath}
                 currPosition={currentPosition}
               />
-              {steps.length > currentPosition + 1 ? (
-                <AddStepButton
-                  hideByDefault={!showMiddleAddButton}
-                  position={currentPosition}
-                  path={path}
-                  onNewStep={onNewStep}
-                  className='ft-step-block-foot'
-                />
-              ) : (
-                <></>
+              {getAddButtonAfterStep(
+                steps,
+                currentPosition,
+                path,
+                onNewStep,
+                showMiddleAddButton
               )}
             </>
           );
