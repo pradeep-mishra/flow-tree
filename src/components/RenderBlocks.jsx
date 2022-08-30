@@ -105,6 +105,18 @@ const RenderBlocks = ({
                   onNewStep={onNewStep}
                 />
               </Loop>
+              <div className='ft-step-block-foot'>
+                {steps.length > currentPosition + 1 ? (
+                  <AddStepButton
+                    hideByDefault={!showMiddleAddButton}
+                    position={currentPosition}
+                    path={path}
+                    onNewStep={onNewStep}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
             </>
           );
         default:
@@ -139,7 +151,9 @@ const RenderBlocks = ({
       {steps.map((step, index) => {
         const currPath = `${path}[${index}]`;
         return (
-          <div key={index}>{loadBlockSwitch(step, index, currPath, path)}</div>
+          <div className='ft-block-item' key={index}>
+            {loadBlockSwitch(step, index, currPath, path)}
+          </div>
         );
       })}
       {getLastAddButton(onNewStep, path)}
