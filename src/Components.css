@@ -164,3 +164,24 @@
   position: absolute;
   margin-left: 44%;
 }
+
+.ft-opacity-0 {
+  opacity: 0;
+}
+
+.ft-title-input {
+  font-size: 1.1em;
+  font-weight: 800;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #091e42;
+  position: absolute;
+  top: 0px;
+}
+
+.ft-title-h3 {
+  padding-top: 3px;
+  padding-left: 4px;
+  font-size: 1.1em;
+  font-weight: 800;
+}

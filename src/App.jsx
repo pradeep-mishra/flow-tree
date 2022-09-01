@@ -51,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <FlowTree title={title}>
+    <FlowTree title={title} setTitle={setTitle}>
       <FlowBlock>
         <RenderBlocks
           steps={steps}
